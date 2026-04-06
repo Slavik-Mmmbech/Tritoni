@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tritoni | Создание новой карты</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="screen">
+        <a href="index.html" class="back-link">← На главный экран</a>
+
+        <header class="page-header">
+            <h1>Создание новой карты</h1>
+            <p class="subtitle">UX-шаблон карточки, которую позже подключат к backend API и БД.</p>
+        </header>
+
+        <section class="panel">
+            <form id="createCardForm" class="form-grid">
+                <div class="field-row">
+                    <label for="newCardId">ID карты</label>
+                    <input id="newCardId" placeholder="Например: TR-2001" required>
+                </div>
+                <div class="field-row">
+                    <label for="newCardSpecies">Вид</label>
+                    <input id="newCardSpecies" placeholder="Например: Lissotriton vulgaris" required>
+                </div>
+                <div class="field-row">
+                    <label for="newCardTerritory">Территория</label>
+                    <input id="newCardTerritory" placeholder="Например: Московская область">
+                </div>
+                <div class="field-row">
+                    <label for="newCardLocation">Локация / координаты</label>
+                    <input id="newCardLocation" placeholder="55.7512, 37.6184">
+                </div>
+                <div class="field-row">
+                    <label for="newCardDate">Дата наблюдения</label>
+                    <input id="newCardDate" type="date">
+                </div>
+                <div class="field-row">
+                    <label for="newCardPhoto">Фото</label>
+                    <input id="newCardPhoto" type="file" accept="image/*">
+                </div>
+                <div class="field-row full">
+                    <label for="newCardNotes">Описание / заметки</label>
+                    <textarea id="newCardNotes" rows="4" placeholder="Признаки, детали наблюдения, статус и т.д."></textarea>
+                </div>
+                <div class="action-row">
+                    <button class="btn primary" type="submit">Создать карту</button>
+                    <button class="btn secondary" id="resetCardFormBtn" type="button">Очистить форму</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="panel hidden" id="cardPreviewPanel">
+            <h2>Предпросмотр новой карты</h2>
+            <div id="cardPreview" class="result-card"></div>
+        </section>
+    </div>
+
+    <img class="pixel-corner" src="assets/triton-pixel.png" alt="Пиксель-арт тритона">
+    <div id="toast" class="toast"></div>
+    <script src="renderer.js"></script>
+</body>
+</html>
